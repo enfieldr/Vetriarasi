@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Vetriarasi</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="logo"></a>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Contact Us</h1>
+    <p>Phone: <strong>+91-9360658623</strong> — Email: <strong>arumug32@gmail.com</strong></p>
+
+    <section class="contact-forms">
+      <form id="contactForm" class="form">
+        <label>
+          Name
+          <input type="text" name="name" id="contactName" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" id="contactEmail" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" id="contactMessage" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send Message</button>
+        <p id="contactMessageText" class="form-message" aria-live="polite"></p>
+      </form>
+
+      <div class="map">
+        <!-- Replace src with your Google Maps embed link for your actual location -->
+        <iframe
+          title="Our location"
+          src="https://www.google.com/maps?q=12.570873, 78.572613&z=14&output=embed"
+          loading="lazy"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; Vetriarasi Water Supply</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

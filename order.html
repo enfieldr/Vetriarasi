@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Place an Order — Vetriarasi</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="logo"></a>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="order.html" class="active">Order</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Place an Order</h1>
+    <p>Please provide the details below. This form will POST to a Google Sheets endpoint (placeholder URL in JS).</p>
+
+    <form id="orderForm" class="form">
+      <label>
+        Customer Name
+        <input type="text" name="customerName" id="customerName" required>
+      </label>
+
+      <label>
+        Product
+        <select name="product" id="product" required>
+          <option value="30ml">Sample Drop — 300ml X 30</option>
+          <option value="250ml">Pocket Bottle — 500ml X 30</option>
+          <option value="500ml" selected>Thirsty Bottle — 1L X 30</option>
+          <option value="1l">Travel Friendly — 2L x 30</option>
+          <option value="5l">Compact Can — 5L X 10</option>
+          <option value="10l">Delivery Can — 20L</option>
+          <option value="20l">Holder </option>
+        </select>
+      </label>
+
+      <label>
+        Quantity
+        <input type="number" name="quantity" id="quantity" min="1" value="1" required>
+      </label>
+
+      <label>
+        Delivery Address
+        <textarea name="address" id="address" rows="3" required></textarea>
+      </label>
+
+      <label>
+        Contact Number
+        <input type="tel" name="contact" id="contact" required>
+      </label>
+
+      <button type="submit" class="btn">Submit Order</button>
+      <p id="orderMessage" class="form-message" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; Vetriarasi Water Supply</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
