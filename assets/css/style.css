@@ -193,6 +193,53 @@ body {
   padding: 4rem 0;
 }
 
+/* Video Guide Section */
+.video-guide {
+  padding: 4rem 0;
+  background: var(--light);
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  margin: 2rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-description {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.process-steps {
+  display: inline-block;
+  text-align: left;
+  margin: 2rem auto;
+  padding-left: 1.5rem;
+}
+
+.process-steps li {
+  margin: 1rem 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.video-description .cta {
+  margin-top: 1rem;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
