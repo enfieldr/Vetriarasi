@@ -2,17 +2,42 @@
    Modern design with smooth transitions and accessible features
 */
 :root {
-  --accent: #0b7dda;
-  --accent-dark: #2e8006;
-  --dark: #08304a;
-  --muted: #666;
-  --light: #f8fafc;
-  --border: #e2e8f0;
+  /* Primary palette */
+  --primary: #006494;          /* Deep Ocean Blue */
+  --primary-light: #368011;    /* Clear Sky Blue */
+  --primary-dark: #004d70;     /* Deep Sea Blue */
+  
+  /* Secondary palette */
+  --accent: #00b4d8;          /* Aqua Blue */
+  --accent-dark: #0096c7;     /* Deep Aqua */
+  
+  /* UI Colors */
+  --dark: #1a2b3c;            /* Deep Slate */
+  --muted: #64748b;           /* Professional Gray */
+  --light: #f0f9ff;          /* Ice Blue */
+  --lighter: #ffffff;         /* Pure White */
+  
+  /* Borders & Backgrounds */
+  --border: rgba(0,100,148,0.1);
+  --bg-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  --card-bg: rgba(255,255,255,0.95);
+  
+  /* Layout */
   --max-width: 1200px;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-  --radius: 8px;
-  --transition: 200ms ease-out;
+  --header-height: 70px;
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 24px;
+  
+  /* Effects */
+  --shadow-sm: 0 2px 4px rgba(0,100,148,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,100,148,0.1), 0 2px 4px -1px rgba(0,100,148,0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0,100,148,0.1), 0 4px 6px -2px rgba(0,100,148,0.05);
+  --glow: 0 0 0 3px rgba(0,180,216,0.15);
+  
+  /* Animations */
+  --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Reset & Base */
@@ -42,13 +67,17 @@ body {
 
 /* Header & Navigation */
 .site-header {
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(8px);
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
 }
 
 .header-inner {
@@ -130,10 +159,12 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(120deg, #e9f5ff, #686b56);
-  padding: 4rem 0;
+  background: var(--bg-gradient);
+  padding: 6rem 0;
   position: relative;
   overflow: hidden;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: inset 0 -2px 6px rgba(0,100,148,0.06);
 }
 
 .hero::after {
@@ -170,22 +201,47 @@ body {
 }
 
 .cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-top: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  background: var(--accent);
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: white;
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   transition: all var(--transition);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+  opacity: 0;
+  transition: opacity var(--transition);
 }
 
 .cta:hover {
-  background: var(--accent-dark);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cta:hover::before {
+  opacity: 1;
+}
+
+.cta span {
+  position: relative;
+  z-index: 1;
 }
 
 /* Products Grid */
@@ -248,17 +304,35 @@ body {
 }
 
 .product {
-  background: white;
+  background: var(--card-bg);
   border: 1px solid var(--border);
-  padding: 1.5rem;
-  border-radius: var(--radius);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
   text-align: center;
-  transition: all var(--transition);
+  transition: all var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+.product::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-light), var(--accent));
+  opacity: 0;
+  transition: opacity var(--transition);
 }
 
 .product:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.product:hover::before {
+  opacity: 1;
 }
 
 .product img {
@@ -309,25 +383,40 @@ body {
 .form select,
 .form textarea {
   width: 100%;
-  padding: 0.8rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
   transition: all var(--transition);
   font-size: 1rem;
   font-family: inherit;
+  background: var(--lighter);
+  color: var(--dark);
+}
+
+.form input:hover,
+.form select:hover,
+.form textarea:hover {
+  border-color: var(--primary-light);
 }
 
 .form input:focus,
 .form select:focus,
 .form textarea:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(11,125,218,0.1);
+  border-color: var(--primary);
+  box-shadow: var(--glow);
+  background: var(--lighter);
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.7;
 }
 
 .btn {
   background: var(--accent);
-  color: white;
+  color: rgb(16, 15, 15);
   border: 0;
   padding: 0.8rem 1.5rem;
   border-radius: var(--radius);
