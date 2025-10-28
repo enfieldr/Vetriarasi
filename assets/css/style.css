@@ -3,7 +3,7 @@
 */
 :root {
   --accent: #0b7dda;
-  --accent-dark: #0960a8;
+  --accent-dark: #2e8006;
   --dark: #08304a;
   --muted: #666;
   --light: #f8fafc;
@@ -130,7 +130,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(120deg, #e9f5ff, #f7fbff);
+  background: linear-gradient(120deg, #e9f5ff, #686b56);
   padding: 4rem 0;
   position: relative;
   overflow: hidden;
@@ -417,4 +417,15 @@ body {
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
   margin: 1rem 0;
+}
+
+.error {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2;
+}
+
+.form-message {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: var(--radius);
 }
