@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 🌐 Google Apps Script Web App URLs
   const ORDER_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwgZ0SQ8OoLeUrG_aZxywjsQ9Be07CLJL9ZhBFhsiTj6qIA11wtY4a1gptypKrfhYRbhQ/exec';
-  const CONTACT_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxRHST2az9dSYhygwAf-HXAD6l3HNRrPax6cuOqCoWT4hFmJ-mUAodYzGBdlFpw9qd5/exec';
+  const CONTACT_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxNRGKbzVd70hOG1zpKUfBh5xV0kzedlQe4SwnmLFfu64ipXQdI4hWA_ZJ_HptY_aqV/exec';
 
   // 🧩 Helper: validate required fields
   function validateForm(form) {
