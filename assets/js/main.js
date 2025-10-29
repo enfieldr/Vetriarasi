@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // 🌐 Google Apps Script Web App URLs
-  const ORDER_SHEET_URL = 'https://script.google.com/macros/s/AKfycby9MKjwazzFJ0ZdjnChGpbqOKzcxoEWjXKE029nq_gm9wkcXBYHRpfvfkKD8lBrq0g7Ow/exec';
+  const ORDER_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwgZ0SQ8OoLeUrG_aZxywjsQ9Be07CLJL9ZhBFhsiTj6qIA11wtY4a1gptypKrfhYRbhQ/exec';
   const CONTACT_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxRHST2az9dSYhygwAf-HXAD6l3HNRrPax6cuOqCoWT4hFmJ-mUAodYzGBdlFpw9qd5/exec';
 
   // 🧩 Helper: validate required fields
@@ -85,5 +85,4 @@ document.addEventListener('DOMContentLoaded', function () {
       submitToSheet(CONTACT_SHEET_URL, contactForm, msg);
     });
   }
-
 });
