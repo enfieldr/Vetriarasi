@@ -566,50 +566,65 @@ body {
   border-radius: var(--radius);
 }
 
-/* Default: hide nav list on small screens */
-.nav-list {
-  display: none;
-  list-style: none;
-  background: #111;
-  padding: 1rem;
-  margin: 0;
-}
-
-/* When the toggle button is clicked, this class is added */
-.nav-list.show {
-  display: block;
-}
-
-/* Basic styling for links */
-.nav-list li a {
-  display: block;
-  padding: 0.5rem 1rem;
+/* --- Base nav styling --- */
+.main-nav {
+  background-color: #111;
   color: white;
-  text-decoration: none;
+  padding: 0.5rem 1rem;
+  position: relative;
 }
 
-/* Mobile toggle button styling */
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Desktop links */
+.nav-list li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+/* --- Mobile toggle button --- */
 .nav-toggle {
+  display: none;
   background: none;
   border: none;
   color: white;
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
 }
 
-/* Larger screens — show nav inline */
-@media (min-width: 768px) {
+/* --- Mobile view --- */
+@media (max-width: 768px) {
   .nav-toggle {
-    display: none; /* hide button on desktop */
+    display: block;
   }
 
   .nav-list {
-    display: flex;
-    background: none;
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #111;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
   }
 
-  .nav-list li a {
-    padding: 0.5rem 1rem;
-    color: white;
+  .nav-list.show {
+    max-height: 300px; /* Adjust based on number of links */
+    opacity: 1;
+  }
+
+  .nav-list li {
+    padding: 10px;
+    text-align: center;
   }
 }
