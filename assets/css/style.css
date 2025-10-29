@@ -566,50 +566,11 @@ body {
   border-radius: var(--radius);
 }
 
-/* Default: hide nav list on small screens */
 .nav-list {
   display: none;
-  list-style: none;
-  background: #111;
-  padding: 1rem;
-  margin: 0;
+  transition: all 0.3s ease;
 }
 
-/* When the toggle button is clicked, this class is added */
 .nav-list.show {
   display: block;
-}
-
-/* Basic styling for links */
-.nav-list li a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: white;
-  text-decoration: none;
-}
-
-/* Mobile toggle button styling */
-.nav-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* Larger screens — show nav inline */
-@media (min-width: 768px) {
-  .nav-toggle {
-    display: none; /* hide button on desktop */
-  }
-
-  .nav-list {
-    display: flex;
-    background: none;
-  }
-
-  .nav-list li a {
-    padding: 0.5rem 1rem;
-    color: white;
-  }
 }
